@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&family=Inconsolata:wght@200..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+.body{
+    background: url("../img/bg1.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#scoreBox,
+#hiScoreBox{
+    position: relative;
+    /* top: 150px;
+    left: 150px; */
+    font-family: "Inconsolata", monospace;
+    /* font-optical-sizing: auto; */
+    font-weight:400;
+    font-size: 30px;
+    font-style: normal;
+    /* font-variation-settings:
+    "wdth" 100; */
+}
+
+/* #hiScoreBox{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-size: 40px;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+} */
+
+
+#board{
+    background: linear-gradient(rgb(231, 178, 114), rgb(231, 231, 138));
+    width: 90vmin;
+    height: 90vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows:repeat(18, 1fr);
+}
+
+.head{
+    background: linear-gradient(rgb(202, 49, 49),rgb(248, 242, 127));
+    border: 2px solid rgb(73, 1, 73);
+    transform: scale(1.02);
+    border-radius: 9px;
+}
+
+.snake{
+    background-color: rgb(133, 7, 133);
+    border: 0.25vmin solid white;
+    border-radius: 12px;
+}
+
+.food{
+    background: linear-gradient(rgb(234, 242, 4), rgb(87, 211, 98));
+    border: .25vmin solid black;
+    border-radius: 50%;
+}
+
+.controls {
+    margin-top: 20px;
+    display: none;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 10px;
+}
+
+.controls button {
+    font-size: 24px;
+    border: none;
+    border-radius: 12px;
+    background: #333;
+    color: white;
+}
+
+/* Only show on mobile */
+@media (max-width: 768px){
+    #scoreBox,
+    #hiScoreBox{
+        font-size: 22px;
+    }
+}
